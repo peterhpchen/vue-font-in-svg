@@ -1,7 +1,10 @@
 <template>
   <div id="app">
+    <v-svg type="Cancel" :is-disable="true" />
+    <v-svg type="Cancel" />
     <img src="./assets/logo.png">
-    <img svg-inline src="./assets/img/normal.svg">
+    <img class="cancelBtn" svg-inline src="./assets/img/normal.svg">
+    <img class="cancelBtnDisable" svg-inline src="./assets/img/normal.svg">
     <normal />
     <svg width="93px" height="48px" viewBox="0 0 93 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
@@ -21,12 +24,14 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import VSvg from './components/VSvg'
 import normal from './assets/img/normal.svg'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
+    VSvg,
     normal
   }
 }
@@ -46,5 +51,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.cancelBtn:hover g {
+  fill: #F5F5F5;
+}
+
+.cancelBtnDisable text {
+  fill: #C8C8C8;
 }
 </style>
